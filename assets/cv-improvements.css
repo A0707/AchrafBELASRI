@@ -1,0 +1,14 @@
+a:focus-visible,button:focus-visible{outline:3px solid #1f9d61;outline-offset:4px}
+@media screen and (max-width:820px){
+  .pbar{position:static;display:flex;justify-content:center;margin:16px}
+  .sheet{width:calc(100% - 24px);min-height:0;margin:12px auto;padding:24px 18px}
+  .top{align-items:flex-start;gap:12px}
+  .top img{width:68px;height:68px}
+  h1{font-size:22px}
+  .hl{font-size:11px}
+  .ct{overflow-wrap:anywhere}
+  .sk{grid-template-columns:1fr;gap:3px}
+  .sk .v{margin-bottom:7px}
+  .row{flex-direction:column;gap:2px}
+  .row .d{white-space:normal}
+}

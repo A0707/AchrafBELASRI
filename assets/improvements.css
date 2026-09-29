@@ -1,0 +1,40 @@
+/* Focused improvements that preserve the original visual direction. */
+:root{--fg-faint:#81968d}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
+.fact small{color:var(--fg-dim);font-size:11px}
+.mobile-menu{display:none;position:relative;margin-inline-start:auto}
+.mobile-menu>summary{list-style:none;width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--green-dim);border-radius:9px;color:var(--green);font-size:20px;cursor:pointer;background:var(--green-deep)}
+.mobile-menu>summary::-webkit-details-marker{display:none}
+.mobile-panel{position:absolute;top:calc(100% + 12px);inset-inline-end:0;width:min(310px,calc(100vw - 32px));padding:10px;border:1px solid var(--line-2);border-radius:14px;background:#0c1714;box-shadow:0 18px 50px rgba(0,0,0,.55)}
+.mobile-panel>a{display:block;min-height:44px;padding:11px 13px;border-radius:8px;color:var(--fg-dim);font-size:14px;font-weight:500}
+.mobile-panel>a:hover,.mobile-panel>a:focus-visible{background:var(--green-deep);color:var(--green)}
+.mobile-langs{border-top:1px solid var(--line);margin-top:7px;padding-top:9px}
+.langs-mobile{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.langs-mobile a{min-height:40px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:7px;color:var(--fg-dim);font-size:11px;font-weight:600}
+.langs-mobile a.on{background:var(--green);border-color:var(--green);color:#04140c}
+.pcard .ctx strong{display:block;margin-top:9px;color:var(--fg);font-weight:600}
+.pcard .ctx strong::first-letter{color:var(--green)}
+
+@media(max-width:880px){
+  .nav-in{padding-block:12px}
+  .nav-in>.langs,.nav-in>.talk{display:none}
+  .mobile-menu{display:block}
+  .photo-ring{width:min(450px,86vw);height:auto;aspect-ratio:1}
+  .visual{min-height:auto}
+}
+
+@media(max-width:560px){
+  .nav-in{padding-inline:18px;gap:10px}
+  .logo{font-size:13px;min-width:0}
+  .logo .mark{width:32px;height:32px}
+  .logo small{font-size:8px;letter-spacing:1.4px}
+  header{padding-top:105px}
+  .photo-ring{width:min(330px,84vw)}
+  .cta .btn{min-height:46px}
+  .checks{grid-template-columns:1fr}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .glitch::before,.glitch::after,.dot,.radar .sweep,.radar .blip,.scan-bar,.typedrole .cur{animation:none!important}
+}
