@@ -1,6 +1,8 @@
 /* Focused improvements that preserve the original visual direction. */
 :root{--fg-faint:#81968d}
 a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var(--green);outline-offset:4px;border-radius:6px}
+.skip-link{position:fixed;inset-block-start:10px;inset-inline-start:12px;z-index:300;padding:10px 14px;border-radius:8px;background:var(--green);color:#04140c;font-family:var(--disp);font-size:13px;font-weight:700;transform:translateY(-160%);transition:transform .15s ease}
+.skip-link:focus{transform:none}
 .fact small{color:var(--fg-dim);font-size:11px}
 /* Short GPU-friendly intro. The page loads behind it and scrolling is never locked. */
 .intro{display:none;position:fixed;inset:0;z-index:200;background:rgba(4,16,10,.96);place-items:center;padding:24px;opacity:1;transition:opacity .24s ease,visibility .24s ease}
@@ -28,7 +30,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
 .mobile-panel>a:hover,.mobile-panel>a:focus-visible{background:var(--green-deep);color:var(--green)}
 .mobile-langs{border-top:1px solid var(--line);margin-top:7px;padding-top:9px}
 .langs-mobile{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.langs-mobile a{min-height:40px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:7px;color:var(--fg-dim);font-size:11px;font-weight:600}
+.langs-mobile a{min-height:44px;display:grid;place-items:center;border:1px solid var(--line-2);border-radius:7px;color:var(--fg-dim);font-size:12px;font-weight:600}
 .langs-mobile a.on{background:var(--green);border-color:var(--green);color:#04140c}
 .pcard .ctx strong{display:block;margin-top:9px;color:var(--fg);font-weight:600}
 .pcard .ctx strong::first-letter{color:var(--green)}
@@ -37,12 +39,15 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
   .nav-in{padding-block:12px}
   .nav-in>.langs,.nav-in>.talk{display:none}
   .mobile-menu{display:block}
+  .shield-bg{left:auto;right:0}
   .photo-ring{width:min(450px,86vw);height:auto;aspect-ratio:1}
   .visual{min-height:auto}
 }
 
 @media(max-width:560px){
+  .wrap{padding-inline:18px}
   .nav-in{padding-inline:18px;gap:10px}
+  .shield-bg{width:100vw;height:auto}
   .logo{font-size:13px;min-width:0}
   .logo .mark{width:32px;height:32px}
   .logo small{font-size:8px;letter-spacing:1.4px}
@@ -51,6 +56,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
   .cta .btn{min-height:46px}
   .cta{display:grid;grid-template-columns:1fr 1fr}
   .cta .btn{padding-inline:14px;justify-content:center}
+  .cta-band{padding:40px 18px;border-radius:18px}
+  .cta-band .cta{grid-template-columns:1fr}
+  .cta-band .btn{width:100%;overflow-wrap:anywhere;text-align:center}
   .checks{grid-template-columns:1fr}
   .stats{margin-top:38px}
   section{padding-block:64px}
@@ -60,6 +68,12 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:3px solid var
   .intro-brand strong{font-size:12px;letter-spacing:1.2px}
   .intro-log{font-size:11px}
   .intro-skip{inset-inline-end:18px;inset-block-end:18px}
+}
+
+@media(max-width:360px){
+  .hero-id>.cta{grid-template-columns:1fr}
+  .hero-id>.cta .btn{width:100%}
+  .pcard,.scard{padding:19px}
 }
 
 @media(prefers-reduced-motion:reduce){
